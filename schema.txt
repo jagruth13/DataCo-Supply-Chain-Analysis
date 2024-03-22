@@ -1,0 +1,108 @@
+Table Name:MarketDetails
+
+   cid      name     type  notnull dflt_value  pk
+0    0  MarketID  INTEGER        1       None   1
+1    1    Market     TEXT        1       None   0
+
+
+Table Name:RegionDetails
+
+   cid      name     type  notnull dflt_value  pk
+0    0  RegionID  INTEGER        1       None   1
+1    1    Region     TEXT        1       None   0
+2    2  MarketID  INTEGER        1       None   0
+
+
+Table Name:CountryDetails
+
+   cid       name     type  notnull dflt_value  pk
+0    0  CountryID  INTEGER        1       None   1
+1    1    Country     TEXT        1       None   0
+2    2   RegionID  INTEGER        0       None   0
+
+
+Table Name:StateDetails
+
+   cid       name     type  notnull dflt_value  pk
+0    0    StateID  INTEGER        1       None   1
+1    1      State     TEXT        1       None   0
+2    2  CountryID  INTEGER        1       None   0
+
+
+Table Name:CityDetails
+
+   cid     name     type  notnull dflt_value  pk
+0    0   CityID  INTEGER        1       None   1
+1    1     City     TEXT        1       None   0
+2    2  StateID  INTEGER        1       None   0
+
+
+Table Name:DepartmentDetails
+
+   cid          name     type  notnull dflt_value  pk
+0    0  DepartmentID  INTEGER        1       None   1
+1    1    Department     TEXT        1       None   0
+Table Name:CategoryDetails
+
+   cid          name     type  notnull dflt_value  pk
+0    0    CategoryID  INTEGER        1       None   1
+1    1      Category     TEXT        1       None   0
+2    2  DepartmentID  INTEGER        1       None   0
+
+
+Table Name:ProductDetails
+
+   cid              name     type  notnull dflt_value  pk
+0    0         ProductID  INTEGER        1       None   1
+1    1           Product     TEXT        1       None   0
+2    2  ProductUnitPrice     REAL        1       None   0
+3    3        CategoryID  INTEGER        1       None   0
+
+
+Table Name:VendorDetails
+
+   cid      name     type  notnull dflt_value  pk
+0    0  VendorID  INTEGER        1       None   1
+1    1   Zipcode     TEXT        1       None   0
+2    2    CityID  INTEGER        1       None   0
+
+
+Table Name:CustomerDetails
+
+   cid        name     type  notnull dflt_value  pk
+0    0  CustomerID  INTEGER        1       None   1
+1    1       Fname     TEXT        1       None   0
+2    2       Lname     TEXT        0       None   0
+3    3     Segment     TEXT        1       None   0
+4    4     Address     TEXT        1       None   0
+5    5      CityID  INTEGER        1       None   0
+6    6     Zipcode     TEXT        1       None   0
+
+
+Table Name:ShippingDetails
+
+    cid            name     type  notnull dflt_value  pk
+0     0         OrderID  INTEGER        1       None   1
+1     1      CustomerID  INTEGER        1       None   0
+2     2     OrderStatus     TEXT        1       None   0
+3     3     PaymentType     TEXT        1       None   0
+4     4       OrderDate     DATE        1       None   0
+5     5    ActualNoDays  INTEGER        1       None   0
+6     6  EstimateNoDays  INTEGER        1       None   0
+7     7  DeliveryStatus     TEXT        1       None   0
+8     8        LateRisk  INTEGER        1       None   0
+9     9    ShippingDate     DATE        1       None   0
+10   10    ShippingMode     TEXT        1       None   0
+
+
+Table Name:OrderDetails
+
+   cid              name     type  notnull dflt_value  pk
+0    0            ItemID  INTEGER        1       None   1
+1    1           OrderID  INTEGER        1       None   0
+2    2          VendorID  INTEGER        1       None   0
+3    3         ProductID  INTEGER        1       None   0
+4    4  ItemDiscountRate     REAL        0       None   0
+5    5      ItemQuantity  INTEGER        0       None   0
+6    6     ProfitpreItem     REAL        0       None   0
+7    7             Sales     REAL        0       None   0
